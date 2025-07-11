@@ -2,7 +2,16 @@
 // Return the average temperature of all the Planets
 // Return example: 132.53
 
-export function getAveragePlanetsTemperature(data) {}
+import { TAllData } from "../types";
+
+export const getAveragePlanetsTemperature = (data: TAllData): number => {
+  return (
+    data.planets
+      .map((planet) => planet.avgTemp)
+      .reduce((total, planetAve) => total + planetAve, 0) / data.planets.length
+  );
+};
+// could add filter for edge case if planet temp didn't have typeof number but all data here has it
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-13"

@@ -1,6 +1,13 @@
 // SPACE DATA EXERCISE 7
+
+import { TAllData } from "../types";
+
 // Return an array of all Planets names that have moons
-export function getPlanetsWithMoons(planets) {}
+export function getPlanetsWithMoons(planets: TAllData["planets"]): string[] {
+  return planets
+    .filter((planet) => Array.isArray(planet.moons) && planet.moons.length > 0)
+    .map((planet) => planet.name);
+}
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-7"

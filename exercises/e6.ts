@@ -1,6 +1,16 @@
 // SPACE DATA EXERCISE 6
+
+import { TAllData } from "../types";
+
 // Return an array with all asteroids discovered after a given year
-export function getAsteroidsDiscoveredAfterYear(asteroids, year) {}
+export const getAsteroidsDiscoveredAfterYear = (
+  asteroids: TAllData["asteroids"],
+  year: number
+): TAllData["asteroids"] => {
+  return asteroids
+    .filter((asteroid) => asteroid.discoveryYear > year)
+    .map((asteroid) => asteroid);
+};
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-6"
