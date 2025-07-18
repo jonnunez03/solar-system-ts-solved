@@ -11,10 +11,12 @@ export const findPlanetByMoon = ({
   planets: TPlanet[];
   moonName: string;
 }) => {
-  return planets.find((planet) =>
-    planet.moons?.some((moon) =>
-      moon.toLocaleLowerCase().includes(moonName.toLocaleLowerCase())
-    )
+  return planets.find(
+    (planet) =>
+      planet.moons &&
+      planet.moons
+        .map((moon) => moon.toLocaleLowerCase())
+        .includes(moonName.toLowerCase())
   );
 };
 
