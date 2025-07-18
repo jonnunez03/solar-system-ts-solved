@@ -5,11 +5,11 @@ import { TAllData } from "../types";
 // Return the name of the first Planet in the array
 // Return example: 'Planet Name'
 
-export const getFirstPlanetName = (data: TAllData): string => {
+export const getFirstPlanetName = (data: TAllData) => {
   // Your code goes here...
   const planets = data.planets;
   //console.log(planets);
-  return planets[0]!.name;
+  return planets[0]?.name;
 };
 
 // === TEST YOURSELF ===

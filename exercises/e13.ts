@@ -4,14 +4,12 @@
 
 import { TAllData } from "../types";
 
-export const getAveragePlanetsTemperature = (data: TAllData): number => {
+export const getAveragePlanetsTemperature = (data: TAllData) => {
   return (
-    data.planets
-      .map((planet) => planet.avgTemp)
-      .reduce((total, planetAve) => total + planetAve, 0) / data.planets.length
+    data.planets.reduce((total, planet) => total + (planet.avgTemp || 0), 0) /
+    data.planets.length
   );
 };
-// could add filter for edge case if planet temp didn't have typeof number but all data here has it
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-13"

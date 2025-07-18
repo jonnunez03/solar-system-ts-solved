@@ -2,11 +2,9 @@
 // Return an array of all Planets' average temperatures
 // Return example: [1, 2, ... , N]
 
-import { TAllData } from "../types";
+import { TPlanet } from "../types";
 
-export const getAllAverageTemperatures = (
-  planets: TAllData["planets"]
-): number[] => {
+export const getAllAverageTemperatures = (planets: TPlanet[]) => {
   return planets.map((planet) => planet.avgTemp);
 };
 

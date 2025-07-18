@@ -2,14 +2,13 @@
 // Return the sum of orbital periods of all asteroids
 // Return example: 234234.234
 
-import { TAllData } from "../types";
+import { TAsteroid } from "../types";
 
-export const getOrbitalPeriodsSum = (
-  asteroids: TAllData["asteroids"]
-): number => {
-  return asteroids
-    .map((asteroid) => asteroid.orbitalPeriod)
-    .reduce((total, asteroidOrbitalAve) => total + asteroidOrbitalAve, 0);
+export const getOrbitalPeriodsSum = (asteroids: TAsteroid[]) => {
+  return asteroids.reduce(
+    (total, asteroid) => total + (asteroid.orbitalPeriod || 0),
+    0
+  );
 };
 
 // === TEST YOURSELF ===

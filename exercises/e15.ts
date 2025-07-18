@@ -1,11 +1,9 @@
 // SPACE DATA EXERCISE 15
 // Return an array of Planets' without moons
 
-import { TAllData } from "../types";
+import { TAllData, TPlanet } from "../types";
 
-export const getPlanetsWithNoMoons = (
-  planets: TAllData["planets"]
-): TAllData["planets"] => {
+export const getPlanetsWithNoMoons = (planets: TPlanet[]) => {
   return planets.filter((planet) => !planet.moons);
 };
 

@@ -1,15 +1,18 @@
 // SPACE DATA EXERCISE 6
 
-import { TAllData } from "../types";
+import { TAsteroid } from "../types";
 
 // Return an array with all asteroids discovered after a given year
 export const getAsteroidsDiscoveredAfterYear = (
-  asteroids: TAllData["asteroids"],
+  asteroids: TAsteroid[],
   year: number
-): TAllData["asteroids"] => {
-  return asteroids
-    .filter((asteroid) => asteroid.discoveryYear > year)
-    .map((asteroid) => asteroid);
+) => {
+  return asteroids.reduce((acc: TAsteroid[], asteroid) => {
+    if (asteroid.discoveryYear > year) {
+      return [...acc, asteroid];
+    }
+    return acc;
+  }, []);
 };
 
 // === TEST YOURSELF ===

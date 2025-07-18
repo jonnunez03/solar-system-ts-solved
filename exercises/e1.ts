@@ -2,9 +2,9 @@
 // Return an array of all Planets' names
 // Return example: ['name1', 'name2', ... , 'nameN']
 
-import { TAllData } from "../types";
+import { TPlanet } from "../types";
 
-export const getPlanetNames = (planets: TAllData["planets"]): string[] => {
+export const getPlanetNames = (planets: TPlanet[]) => {
   return planets.map((planet) => planet.name);
 };
 

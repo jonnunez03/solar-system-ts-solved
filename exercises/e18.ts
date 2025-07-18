@@ -3,11 +3,9 @@
 // Return example: 1902
 // Hint: use a Map data structure instead of an object if you want typescript to be happy
 
-import { TAllData } from "../types";
+import { TAllData, TAsteroid } from "../types";
 
-export const getGreatestDiscoveryYear = (
-  asteroids: TAllData["asteroids"]
-): number => {
+export const getGreatestDiscoveryYear = (asteroids: TAsteroid[]) => {
   const yearsDiscoveredCount = new Map<number, number>();
   const yearsDiscovered: number[] = asteroids.map(
     (asteroid) => asteroid.discoveryYear

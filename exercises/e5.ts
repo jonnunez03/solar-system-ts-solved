@@ -2,18 +2,21 @@
 // Return an array with all Planets' names with a massValue greater or equal to a given number (1-7)
 // Return example: ['name1', 'name2', ... , 'nameN']
 // Note: This input should be destructured from the function parameter
-import { TAllData } from "../types";
+import { TPlanet } from "../types";
 export const getPlanetNamesWithMassValue = ({
   planets,
   greaterThanOrEqualTo,
 }: {
-  planets: TAllData["planets"];
+  planets: TPlanet[];
   greaterThanOrEqualTo: number;
-}): string[] => {
+}) => {
   if (greaterThanOrEqualTo < 1 || greaterThanOrEqualTo > 7) return [];
-  return planets
-    .filter((planet) => planet.mass.massValue >= greaterThanOrEqualTo)
-    .map((planet) => planet.name);
+  return planets.reduce((acc: string[], planet) => {
+    if (planet.mass.massValue >= greaterThanOrEqualTo) {
+      return [...acc, planet.name];
+    }
+    return acc;
+  }, []);
 };
 
 // === TEST YOURSELF ===

@@ -1,12 +1,10 @@
 // SPACE DATA EXERCISE 11
 // Return an array of Planets with less than 10 moons
 
-import { TAllData } from "../types";
+import { TAllData, TPlanet } from "../types";
 
 // include planets with 0 moons
-export const lowMoonsPlanets = (
-  planets: TAllData["planets"]
-): TAllData["planets"] => {
+export const lowMoonsPlanets = (planets: TPlanet[]) => {
   return planets.filter((planet) => !planet.moons || planet.moons.length < 10);
 };
 

@@ -2,14 +2,15 @@
 // Return an array of Planets' names with gravity less than 10
 // Return example: ['name1', 'name2', ... , 'nameN']
 
-import { TAllData } from "../types";
+import { TPlanet } from "../types";
 
-export const getPlanetNamesWithLowGravity = (
-  planets: TAllData["planets"]
-): string[] => {
-  return planets
-    .filter((planet) => planet.gravity < 10)
-    .map((planet) => planet.name);
+export const getPlanetNamesWithLowGravity = (planets: TPlanet[]) => {
+  return planets.reduce((acc: string[], planet) => {
+    if (planet.gravity < 10) {
+      return [...acc, planet.name];
+    }
+    return acc;
+  }, []);
 };
 
 // === TEST YOURSELF ===

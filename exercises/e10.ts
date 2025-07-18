@@ -1,7 +1,7 @@
 // SPACE DATA EXERCISE 10
 // Return a given asteroid object of data
 
-import { TAsteroid, TAllData } from "../types";
+import { TAllData } from "../types";
 
 // make sure that you destructure your parameters
 export const getAsteroidDataByName = ({
@@ -10,7 +10,7 @@ export const getAsteroidDataByName = ({
 }: {
   allData: TAllData;
   asteroidName: string;
-}): TAsteroid | undefined => {
+}) => {
   return allData.asteroids.find((asteroid) => asteroid.name === asteroidName);
 };
 

@@ -2,11 +2,9 @@
 // Return an array of all Asteroids' names
 // Return example: ['name1', 'name2', ... , 'nameN']
 
-import { TAllData } from "../types";
+import { TAsteroid } from "../types";
 
-export const getAsteroidNames = (
-  asteroids: TAllData["asteroids"]
-): string[] => {
+export const getAsteroidNames = (asteroids: TAsteroid[]) => {
   return asteroids.map((asteroid) => asteroid.name);
 };
 

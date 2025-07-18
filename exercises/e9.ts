@@ -2,10 +2,12 @@
 // Return the data object of the planet "Earth"
 // Return example: { key1: value1, key2: value2, ... , keyN: valueN }
 
-import { TPlanet, TAllData } from "../types";
+import { TAllData } from "../types";
 
-export const findEarthData = (data: TAllData): TPlanet | undefined => {
-  return data.planets.find((planet) => planet.id === "earth");
+export const findEarthData = (data: TAllData) => {
+  return data.planets.find(
+    (planet) => planet.name.toLocaleLowerCase() === "Earth".toLocaleLowerCase()
+  );
 };
 
 // === TEST YOURSELF ===

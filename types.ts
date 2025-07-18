@@ -16,10 +16,7 @@ export type TPlanet = {
     massValue: number;
     massExponent: number;
   };
-  vol: {
-    volValue: number;
-    volExponent: number;
-  };
+  vol: VolData;
   gravity: number;
   avgTemp: number;
   moonsCount?: number;

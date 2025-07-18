@@ -1,12 +1,15 @@
 // SPACE DATA EXERCISE 7
 
-import { TAllData } from "../types";
+import { TPlanet } from "../types";
 
 // Return an array of all Planets names that have moons
-export function getPlanetsWithMoons(planets: TAllData["planets"]): string[] {
-  return planets
-    .filter((planet) => Array.isArray(planet.moons) && planet.moons.length > 0)
-    .map((planet) => planet.name);
+export function getPlanetsWithMoons(planets: TPlanet[]): string[] {
+  return planets.reduce((acc: string[], planet) => {
+    if (Array.isArray(planet.moons) && planet.moons.length > 0) {
+      return [...acc, planet.name];
+    }
+    return acc;
+  }, []);
 }
 
 // === TEST YOURSELF ===

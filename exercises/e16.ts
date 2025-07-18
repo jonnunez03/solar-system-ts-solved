@@ -10,5 +10,4 @@ export const find = <T>(
       return element;
     }
   }
-  return undefined;
 };

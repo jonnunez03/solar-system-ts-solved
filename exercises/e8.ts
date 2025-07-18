@@ -1,21 +1,20 @@
 // SPACE DATA EXERCISE 8
 // Return a Planet by a given moon name
 
-import { TPlanet, TAllData } from "../types";
+import { TPlanet } from "../types";
 
 //  must have destructured parameters
 export const findPlanetByMoon = ({
   planets,
   moonName,
 }: {
-  planets: TAllData["planets"];
+  planets: TPlanet[];
   moonName: string;
-}): TPlanet | undefined => {
-  const moonCapitalize =
-    moonName.charAt(0).toLocaleUpperCase() + moonName.slice(1);
-  return planets.find(
-    (planet) =>
-      Array.isArray(planet.moons) && planet.moons.includes(moonCapitalize)
+}) => {
+  return planets.find((planet) =>
+    planet.moons?.some((moon) =>
+      moon.toLocaleLowerCase().includes(moonName.toLocaleLowerCase())
+    )
   );
 };
 

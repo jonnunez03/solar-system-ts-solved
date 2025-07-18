@@ -4,10 +4,12 @@
 import { TAllData } from "../types";
 
 // Return example: 42
-export const allPlanetsMoonsCount = (data: TAllData): number => {
-  return data.planets
-    .filter((planet) => Array.isArray(planet.moons) && planet.moons.length > 0)
-    .reduce((total, planet) => total + (planet.moonsCount ?? 0), 0);
+export const allPlanetsMoonsCount = (data: TAllData) => {
+  return data.planets.reduce(
+    (total: number, planet) =>
+      total + ((planet.moons && planet?.moons?.length) || 0),
+    0
+  );
 };
 
 // === TEST YOURSELF ===
